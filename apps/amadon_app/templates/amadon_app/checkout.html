@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>Amadon Checkout</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{% static '/amadon_app/css/style.css' %}">
+</head>
+<body>
+    <div class = "wrapper">
+        <h1 style = "margin-bottom:50px">Thank you for your business!</h1>
+        <p>We charged your credit card for ${{ cur_transaction }}</p>
+        <p>You have ordered {{ request.session.total_items }} items so far and spent ${{ request.session.total_spent }} with Amadon.com!</p>
+        <form action = '/amadon'>
+            <button type = "submit" class = "view_button">Go Back</button>
+        </form>
+    </div>
+</body>
